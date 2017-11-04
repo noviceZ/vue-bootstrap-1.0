@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width = device-width, initial-scale = 1,user-scalable = no">
+		<title>留言板</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		
+		<!--主人部分 master-->
+		<div class="container">
+			<h5>留言板</h5>
+			<hr>
+			<div class="panel" id="master">
+				<div class="panel-heading">
+					<h4>主人寄语</h4>
+					<p v-on:click="editMessage">编辑您的寄语</p>
+				</div>
+				<div class="panel-body">
+					<div class="master-content">
+						<br />
+						{{masterMessage}}
+					</div>
+					<div v-show="showMaster">
+						<textarea rows="8" v-model="message">
+						
+						</textarea>
+						<input type="button" name="fabiao" id="fabiao" value="发表" class="btn btn-sm" role = "button" v-on:click="publish" />
+						<input type="button" name="quxiao" id="quxiao" value="取消" class="btn btn-sm" role = "button" v-on:click="cancelEdit" />
+					</div>
+				</div>
+			</div>
+			<!--master end-->
+			
+			<!--已发表留言部分 user-content-->
+			<div class="panel" id="user">
+				<h5>留言 {{count}}</h5>                 <!--TODO计算留言数量--> 
+				<div class="panel-body panel-default">
+					<div class="user-content" v-for="item in userContent">
+						{{item}}
+					</div>
+					<div class="user-null" v-if="userContent.length == 0">
+						<h5>暂无留言...</h5>
+					</div>
+				</div>
+			</div>
+			<!--user-content end-->
+			
+			<!--写留言部分 write-->
+			<div class="panel" id="write">
+				<div class="panel-heading">
+					<p v-on:click="writeMessage">我要留言</p>
+				</div>
+				<div class="panel-body">
+					<div v-show="userMessage">
+						<textarea rows="8" v-model="message2">
+						
+						</textarea>
+						<input type="button" name="fabiao-2" id="fabiao-2" value="发表" class="btn btn-sm" role = "button" v-on:click="userPublish" />
+						<input type="button" name="quxiao-2" id="quxiao-2" value="取消" class="btn btn-sm" role = "button" v-on:click="userCancel" />
+					</div>
+				</div>
+			</div>
+			<!--write end-->
+		</div>
+		
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

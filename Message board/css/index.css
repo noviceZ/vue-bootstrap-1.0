@@ -1,0 +1,72 @@
+
+* {
+	margin: 0 auto;
+	padding: 0 ;
+	/*border: 1px solid #000000;*/
+}
+
+/*主人部分     master*/
+hr {
+	margin: 0;
+}
+
+#master h4,
+#master p{
+	display: inline-block;
+	margin-right: 5px;
+}
+
+#master p {
+	color: #26709A;
+	cursor: pointer;
+}
+
+#master .panel-body {
+	padding-top: 0;
+}
+
+#master .master-content {
+	width: 100%;
+	margin-bottom: 10px;
+	min-height: 150px;
+	border-top: 1px solid #EEEEEE;
+	text-align: center;
+}
+
+#master .panel-body textarea {
+	width: 90%;
+	display: block;
+	margin-bottom: 10px;
+}
+/*master end*/
+
+/*已发表留言部分 user-content*/
+#user .user-content {
+	border-top: 1px solid #EEEEEE;
+	width: 100%;
+	min-height: 150px;
+}
+
+#user .user-null {
+	width: 100%;
+	min-height: 50px;
+	text-align: center;
+}
+/*user-content end*/
+
+/*写留言部分 write*/
+#write p {
+	color: #26709A;
+	cursor: pointer;
+}
+
+#write .panel-body {
+	padding-top: 0;
+}
+
+#write textarea {
+	width: 90%;
+	display: block;
+	margin-bottom: 10px;
+}
+/*write end*/
